@@ -1,0 +1,12 @@
+# pack-refs with: peeled fully-peeled sorted 
+d316672d380bf6ddf8af9371734e4f31a6920c32 refs/heads/dependabot/pip/ipython-7.31.1
+456e911f797fc0c99f1b4867ef9d2ec0b66cee1b refs/heads/dependabot/pip/jupyterlab-2.2.10
+b0e71958154318fc189c3a00f826738c1fbefebe refs/heads/dependabot/pip/lxml-4.9.1
+877eddbcdc4288d05ca8c2665c69702a5239bd7f refs/heads/dependabot/pip/mistune-2.0.3
+348ad23835d5959bad151fdc8163afa88cc64084 refs/heads/dependabot/pip/nbconvert-6.3.0
+6f97c89130ea3b2404194df3d1b8747d5952d0e7 refs/heads/dependabot/pip/notebook-6.4.12
+47b1033781c4cf3f83ca3f8f8d2f8e5cab670d36 refs/heads/dependabot/pip/numpy-1.22.0
+6b8a18f6404085beb11582be979a05c90a9f11fe refs/heads/dependabot/pip/pillow-9.0.1
+2e40cc59d8b62ca6b3f750202b62d70a08a43cb2 refs/heads/dependabot/pip/urllib3-1.26.5
+8582f4ba9bf2daf53bfcb93caae4f9296ea5a35b refs/heads/develop
+7a5246e2610b27c406d0a16d795df803bb8e7c6c refs/heads/master
