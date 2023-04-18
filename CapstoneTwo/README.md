@@ -4,7 +4,7 @@
 
 ![title](images/homeprice.webp)
 
-Understanding what makes a house worth a certain amount of money in a given time period, is extremely important for many stakeholders in this economy. Whether you are a homeowner, potential buyer, house flipper, real estate agent, investor, etc, having an accurate prediction of house prices ensures you are maximizing your gains and minimizing your losses.  In the United States, the housing market has increased about 20% since the covid housing market crash in 2020.  There are many reasons housing prices can fluctuate such as supply and demand, interest rates, recessions, high levels of federal debt, etc.  However, other important factors that determine a home's worth are its neighborhood, home size, home age, upgrades or updates, and other home amenities.  The goal of this project is to create a model that predicts housing prices based on home attributes and qualities to contribute to helping stakeholders make more informed and accurate decisions. 
+Understanding what makes a house worth a certain amount of money in a given time period, is extremely important for many stakeholders in this economy. Whether you are a homeowner, potential buyer, house flipper, real estate agent, or investor, having an accurate prediction of house prices ensures you are maximizing your gains and minimizing your losses.  In the United States, the housing market has increased about 20% since the covid housing market crash in 2020.  There are many reasons housing prices can fluctuate such as supply and demand, interest rates, recessions, high levels of federal debt, etc.  However, other important factors that determine a home's worth are its neighborhood, home size, home age, upgrades or updates, and other home amenities.  The goal of this project is to create a model that predicts housing prices based on home attributes and qualities to help stakeholders make more informed and accurate decisions. 
 
 ## Data 
 
@@ -16,7 +16,9 @@ The first step to finding a predictive model was to clean the data. This data se
 
 ![title](images/histogram.png)
 
-I removed one row that contained an outlier for Lot Area. Then, I investigated the data types to determine what value to fill the NaNs with: 0 or 'None'. For most categorical values, I replaced NaNs with 'None' to describe that the house did not have that feature, such as a fence, fireplace, or alley.  For continuous variables, like Lot Frontage or Lot Area, I replaced NaNs with 0 to represent 0 sq ft.  This was to ensure my model continued to treat these floats and integers as continuous, and not categorical, variables. I saved both data sets and began exploring the data further.
+After closely looking at the histograms, it seemed as if LotArea had a max value of over 200,000 sq ft, which seemed like an outlier.  Upon investigating, I determined the value was probably input incorreclty and removed that row of data. 
+
+Next, I investigated the data types to determine what value to fill the NaNs with: 0 or 'None'. For most categorical values, I replaced NaNs with 'None' to describe that the house did not have that feature, such as a fence, fireplace, or alley.  For continuous variables, like Lot Frontage or Lot Area, I replaced NaNs with 0 to represent 0 sq ft.  This was to ensure my model continued to treat these floats and integers as continuous, and not categorical, variables. I saved both data sets and began exploring the data further.
 
 ## Exploratory Data Analysis 
 
@@ -24,15 +26,31 @@ I used a Linear Regression model to explore the first 4 independent variables of
 
 ![title](images/actualvspredicted.png)
 
-There seemed to be a linear relationship between the actual and predicted prices using these 4 variables. These results provided insight into which variables I should consider when creating my model. 
+There seemed to be a linear relationship between the actual and predicted prices using these 4 variables. These results suggested I should include lot area, lot frontage, and overall quality as variables when modeling. 
 
 ## Model
 
 Before modeling, I performed a one-hot encoding method to assign each categorical value its own column by running pd.get_dummies() on both test and train data sets. This created unique columns for each value found within categorical variables where the row would be populated with 1 and if they had that amenity and would be populated with 0 if they did not. 
 
-For modeling, I used sklearn's Linear Regression and Random Forest Classfier. I adjusted the hyperparameters of different continuous features such as lot area, lot frontage, and overall quality of the houses. I tested the accuracy of my model by calculated the RMSE score of the train and test model predictions. I also adjusted attributes to the Random Forest Classifier model as shown in the table below:
+For modeling, I used sklearn's Linear Regression and Random Forest Classfier. I adjusted the hyperparameters of different continuous features such as lot area size (LotArea), lot frontage size (LotFrontage), overall house quality (OverallQual), total basement size (TotalBsmtSqFt), and year built (YearBuilt). To determine the thresholds, I first fit the Linear Regression model to the train set using those features, then predicted prices using the test set. I plotted the actual and predicted prices as shown in this example figure below for the TotalBsmtSqFt variable:
+
+![title](images/basement.png)
+![title](images/basementerror.png)
+
+Then, I plotted the resitual error and chose a cut off point where the error started to get further from 0.  For basement size, that happened to be at around 2,000 sq ft. I repeated this step for all variables and their thresholds. 
+
+I tested the accuracy of each model by calculated the RMSE score of the train and test model predictions. I also adjusted attributes to the Random Forest Classifier model as shown in the table below:
 
 ![title](images/models.png)
+
+The best model here is model 18, the RandomForestClassifier model where n_estimators=5, n_jobs=5, and max_depth=5. This model's RMSE train and test score were 56,787 and 96,408 respectively.  This means the model  predicted house prices that fell between +- $56,787 from the actual prices in the train data set. The RMSE test score, which used test data, was calculated at 96,408.  Although this seems high, the standard deviation of the entire data set is 79,440, which means 67% of the data falls within +- $79,440 from the mean ($180,935). 
+
+## Conclusion and Future work
+
+Although model 18 was the best model, $96,000 could be a lot of money to lose if you were to use my model to flip or sell a house.  This is especially true for houses priced on the lower end of the scale. For example, if a house were predicted to list at $180,000, and there was a $96,000 error, you could potentially lose 53% of a profit.  
+
+Future work should investigate other features of this data set to decrease the error as much as possible.  Since neighborhoods and town amenities can also affect housing prices, considering other cities could potentially add more dimension and value to these models.
+
 
 
 
