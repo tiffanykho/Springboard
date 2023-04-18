@@ -1,12 +1,14 @@
-# Housing Project Final Report#
+# Housing Project Final Report
 
 ## Introduction
 
+![title](images/homeprice.webp)
 
+Understanding what makes a house worth a certain amount of money in a given time period, is extremely important for many stakeholders in this economy. Whether you are a homeowner, potential buyer, house flipper, real estate agent, investor, etc, having an accurate prediction of house prices is important to ensure you are maximizing your gains and minimizing your losses.  In the United States, the housing market has increased 
 
 ## Data 
 
-I used the Ames Housing data set that consisted of 79 explanatory variables describing residental homes in Ames, Iowa. This data set was already split into train and test sets. 
+The Ames Housing data set that consisted of 79 explanatory variables describing residental homes in Ames, Iowa. This data set was split into train and test sets. 
 
 ## Data Wrangling
 
@@ -14,7 +16,7 @@ The first step to finding a predictive model was to clean the data. I investigat
 
 ## Exploratory Data Analysis 
 
-I used a Linear Regression model to explore the first 4 independent variables of this housing data set: Id, Lot Frontage (sq ft), Lot Area (sq ft), and Overall Qualiry. I fit these 4 variables (X) with their respective Sale Price (y) and calculated the mean absolute error (MAE) and the root mean square error (RMSE). Lasttly, I generated a scatterplot showing predicted and actual housing prices using these 4 variables.  
+I used a Linear Regression model to explore the first 4 independent variables of this housing data set: Id, Lot Frontage (sq ft), Lot Area (sq ft), and Overall Quality. The goal here was to get a general idea of the how manipulating the first 4 variables I fit these 4 variables (X) with their respective Sale Price (y) and calculated the mean absolute error (MAE) and the root mean square error (RMSE). Lastly, I generated a scatterplot showing predicted and actual housing prices using these 4 variables.  
 
 ## Model
 
