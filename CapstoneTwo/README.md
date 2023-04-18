@@ -30,4 +30,9 @@ There seemed to be a linear relationship between the actual and predicted prices
 
 Before modeling, I performed a one-hot encoding method to assign each categorical value its own column by running pd.get_dummies() on both test and train data sets. This created unique columns for each value found within categorical variables where the row would be populated with 1 and if they had that amenity and would be populated with 0 if they did not. 
 
+For modeling, I used sklearn's Linear Regression and Random Forest Classfier. I adjusted the hyperparameters of different continuous features such as lot area, lot frontage, and overall quality of the houses. I tested the accuracy of my model by calculated the RMSE score of the train and test model predictions. I also adjusted attributes to the Random Forest Classifier model as shown in the table below:
+
+![title](images/models.png)
+
+
 
