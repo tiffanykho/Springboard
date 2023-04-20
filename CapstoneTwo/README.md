@@ -43,7 +43,7 @@ I tested the accuracy of each model by calculated the RMSE score of the train an
 
 ![title](images/models.png)
 
-The best model here is model 13, the RandomForestClassifier model where n_estimators=276 and max_depth=14. This model's RMSE train score was 1,364 meaning the model  predicted house prices that fell between +- $1,364 from the actual prices in the train data set. The RMSE test score, which used test data, was calculated at 108.273, which is over $100,000 error.  
+The best model here is model 13, the RandomForestClassifier model where n_estimators=276 and max_depth=14. This model's RMSE train score was 1,364 meaning the model  predicted house prices that fell between +- $1,364 from the actual prices in the train data set. The RMSE test score, which used test data, was calculated at 109,548, which is over $100,000 error.  
 
 ## Conclusion and Future work
 
