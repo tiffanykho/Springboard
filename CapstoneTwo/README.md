@@ -16,8 +16,6 @@ The first step to finding a predictive model was to clean the data. This data se
 
 ![title](images/histogram.png)
 
-After closely looking at the histograms, it seemed as if LotArea had a max value of over 200,000 sq ft, which seemed like an outlier.  Upon investigating, I determined the value was probably input incorreclty and removed that row of data. 
-
 Next, I investigated the data types to determine what value to fill the NaNs with: 0 or 'None'. For most categorical values, I replaced NaNs with 'None' to describe that the house did not have that feature, such as a fence, fireplace, or alley.  For continuous variables, like Lot Frontage or Lot Area, I replaced NaNs with 0 to represent 0 sq ft.  This was to ensure my model continued to treat these floats and integers as continuous, and not categorical, variables. I saved both data sets and began exploring the data further.
 
 ## Exploratory Data Analysis 
