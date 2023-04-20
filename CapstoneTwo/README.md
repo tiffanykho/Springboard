@@ -39,17 +39,17 @@ For modeling, I used sklearn's Linear Regression and Random Forest Classfier. I 
 
 Then, I plotted the resitual error and chose a cut off point where the error started to get further from 0.  For basement size, that happened to be at around 2,000 sq ft. I repeated this step for all variables and their thresholds. 
 
-I tested the accuracy of each model by calculated the RMSE score of the train and test model predictions. I also adjusted attributes to the Random Forest Classifier model as shown in the table below:
+I tested the accuracy of each model by calculated the RMSE score of the train and test model predictions. I also used Scikit-learn's RandomizedSearchCV to find the best hyperparameters of the Random Forest Classifier model as shown in the table below:
 
 ![title](images/models.png)
 
-The best model here is model 18, the RandomForestClassifier model where n_estimators=5, n_jobs=5, and max_depth=5. This model's RMSE train and test score were 56,787 and 96,408 respectively.  This means the model  predicted house prices that fell between +- $56,787 from the actual prices in the train data set. The RMSE test score, which used test data, was calculated at 96,408.  Although this seems high, the standard deviation of the entire data set is 79,440, which means 67% of the data falls within +- $79,440 from the mean ($180,935). 
+The best model here is model 13, the RandomForestClassifier model where n_estimators=276 and max_depth=14. This model's RMSE train score was 1,364 meaning the model  predicted house prices that fell between +- $1,364 from the actual prices in the train data set. The RMSE test score, which used test data, was calculated at 108.273, which is over $100,000 error.  
 
 ## Conclusion and Future work
 
-Although model 18 was the best model, $96,000 could be a lot of money to lose if you were to use my model to flip or sell a house.  This is especially true for houses priced on the lower end of the scale. For example, if a house were predicted to list at $180,000, and there was a $96,000 error, you could potentially lose 53% of a profit.  
+Although model 14 was the best model, $100,000 could be a lot of money to lose if someone were to use my model to predict housing prices if you are trying to flip or sell a house.  This is especially true for houses priced on the lower end of the scale. For example, if a house were predicted to list at $180,000, which was the mean sale price of the data set, and there was a $100,000 error, you could potentially undervalue your home and lose 55% of a profit. 
 
-Future work should investigate other features of this data set to decrease the error as much as possible.  Since neighborhoods and town amenities can also affect housing prices, considering other cities could potentially add more dimension and value to these models.
+Future work should aim to reduce the bias-variance trade off and attain a test RMSE score as close to 0 as possible.  Since neighborhoods and town amenities can also affect housing prices, considering other cities could potentially add more dimension and value to these models.  
 
 
 
