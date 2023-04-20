@@ -2,7 +2,7 @@
 
 ## Introduction
 
-![title](images/homeprice.webp)
+![title](images/homeprice.png)
 
 Understanding what makes a house worth a certain amount of money in a given time period, is extremely important for many stakeholders in this economy. Whether you are a homeowner, potential buyer, house flipper, real estate agent, or investor, having an accurate prediction of house prices ensures you are maximizing your gains and minimizing your losses.  In the United States, the housing market has increased about 20% since the covid housing market crash in 2020.  There are many reasons housing prices can fluctuate such as supply and demand, interest rates, recessions, high levels of federal debt, etc.  However, other important factors that determine a home's worth are its neighborhood, home size, home age, upgrades or updates, and other home amenities.  The goal of this project is to create a model that predicts housing prices based on home attributes and qualities to help stakeholders make more informed and accurate decisions. 
 
@@ -47,7 +47,7 @@ The best model here is model 13, the RandomForestClassifier model where n_estima
 
 ## Conclusion and Future work
 
-Although model 14 was the best model, $100,000 could be a lot of money to lose if someone were to use my model to predict housing prices if you are trying to flip or sell a house.  This is especially true for houses priced on the lower end of the scale. For example, if a house were predicted to list at $180,000, which was the mean sale price of the data set, and there was a $100,000 error, you could potentially undervalue your home and lose 55% of a profit. 
+Although model 13 was the best model, $100,000 could be a lot of money to lose if someone were to use my model to predict housing prices if you are trying to flip or sell a house.  This is especially true for houses priced on the lower end of the scale. For example, if a house were predicted to list at $180,000, which was the mean sale price of the data set, and there was a $100,000 error, you could potentially undervalue your home and lose 55% of a profit. 
 
 Future work should aim to reduce the bias-variance trade off and attain a test RMSE score as close to 0 as possible.  Since neighborhoods and town amenities can also affect housing prices, considering other cities could potentially add more dimension and value to these models.  
 
