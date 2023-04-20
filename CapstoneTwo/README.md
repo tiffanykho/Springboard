@@ -2,7 +2,7 @@
 
 ## Introduction
 
-![title](images/homeprice.png)
+![title](images/homeprice.webp)
 
 Understanding what makes a house worth a certain amount of money in a given time period, is extremely important for many stakeholders in this economy. Whether you are a homeowner, potential buyer, house flipper, real estate agent, or investor, having an accurate prediction of house prices ensures you are maximizing your gains and minimizing your losses.  In the United States, the housing market has increased about 20% since the covid housing market crash in 2020.  There are many reasons housing prices can fluctuate such as supply and demand, interest rates, recessions, high levels of federal debt, etc.  However, other important factors that determine a home's worth are its neighborhood, home size, home age, upgrades or updates, and other home amenities.  The goal of this project is to create a model that predicts housing prices based on home attributes and qualities to help stakeholders make more informed and accurate decisions. 
 
